@@ -12,6 +12,12 @@ public class Matrix {
 	private int columns;
 	private List<List<Float>> array;
 
+	private void swapSizes() {
+		rows = rows ^ columns;
+		columns = rows ^ columns;
+		rows = rows ^ columns;
+	}
+
 	protected Matrix(int rows, int columns, List<List<Float>> array) {
 		this.rows = rows;
 		this.columns = columns;
@@ -37,6 +43,35 @@ public class Matrix {
 			}
 			this.array.add(tempRow);
 		}
+		return this;
+	}
+
+	public Matrix multiplByNum(float number) {
+		List<List<Float>> array = new ArrayList<>();
+		List<Float> tempRow;
+		for (List<Float> row : this.array) {
+			tempRow = new ArrayList<>();
+			for (float num : row) {
+				tempRow.add(num * number);
+			}
+			array.add(tempRow);
+		}
+		this.array = array;
+		return this;
+	}
+
+	public Matrix transpose() {
+		List<List<Float>> array = new ArrayList<>();
+		List<Float> tempRow;
+		for (int column = 0; column < columns; column++) {
+			tempRow = new ArrayList<>();
+			for (int row = 0; row < rows; row++) {
+				tempRow.add(this.array.get(row).get(column));
+			}
+			array.add(tempRow);
+		}
+		swapSizes();
+		this.array = array;
 		return this;
 	}
 

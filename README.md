@@ -15,9 +15,11 @@ Matrix matrix = new Matrix(rows, columns);
 
 | Method | Assignment | Use |
 | - | - | - |
-| fill() | Filling the Matrix with a Scanner. | ```matrix.fill();``` |
-| getRows() | Returns the number of matrix rows. | ```matrix.getRows();``` |
-| getColumns() | Returns the number of matrix columns.  | ```matrix.getColumns();``` |
+| fill | Filling the Matrix with a Scanner. | ```matrix.fill();``` |
+| getRows | Returns the number of matrix rows. | ```matrix.getRows();``` |
+| getColumns | Returns the number of matrix columns.  | ```matrix.getColumns();``` |
+| multiplByNum | Multiplying a matrix by a number. Returns a matrix.  | ```matrix.multiplByNum(number);``` |
+| transpose | Matrix transposition. Returns a matrix.  | ```matrix.transpose();``` |
 
 ## Operations
 
